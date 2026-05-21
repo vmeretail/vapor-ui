@@ -14,7 +14,7 @@ function mockFailedJobProvider()
     $failedJob = (object) [
         'id' => 36,
         'connection' => 'database',
-        'queue' => 'default',
+        'queue' => $_ENV['SQS_PREFIX'].'/'.$_ENV['SQS_QUEUE'],
         'payload' => '{}',
         'exception' => 'Illuminate\Queue\ManuallyFailedException in /',
         'failed_at' => $failedAt,

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         beStrictAboutTestsThatDoNotTestAnything="false"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         convertDeprecationsToExceptions="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
->
-    <testsuites>
-        <testsuite name="Vapor UI Unit Test Suite">
-            <directory suffix=".php">./tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Vapor UI Integration Test Suite">
-            <directory suffix=".php">./tests/Integration</directory>
-        </testsuite>
-    </testsuites>
-    <php>
-        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
-    </php>
+<phpunit backupGlobals="false" beStrictAboutTestsThatDoNotTestAnything="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="false" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+  <testsuites>
+    <testsuite name="Vapor UI Unit Test Suite">
+      <directory suffix=".php">./tests/Unit</directory>
+    </testsuite>
+    <testsuite name="Vapor UI Integration Test Suite">
+      <directory suffix=".php">./tests/Integration</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+    <env name="AWS_DEFAULT_REGION" value="us-east-1"/>
+    <env name="AWS_ACCESS_KEY_ID" value="vapor-ui-testing"/>
+    <env name="AWS_SECRET_ACCESS_KEY" value="vapor-ui-testing"/>
+    <env name="VAPOR_PROJECT" value="vapor-ui"/>
+    <env name="VAPOR_ENVIRONMENT" value="production"/>
+    <env name="SQS_PREFIX" value="https://sqs.us-east-1.amazonaws.com/123456789012"/>
+    <env name="SQS_QUEUE" value="vapor-ui-production"/>
+  </php>
 </phpunit>

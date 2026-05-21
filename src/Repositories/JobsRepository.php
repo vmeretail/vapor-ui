@@ -106,7 +106,7 @@ class JobsRepository
      */
     protected function queue($filters)
     {
-        $queue = $filters['queue'];
+        $queue = $filters['queue'] ?? config('vapor-ui.queue.name');
         $prefix = config('vapor-ui.queue.prefix');
 
         return "$prefix/$queue";

@@ -34,7 +34,7 @@ test('hits per page', function () {
         'content' => [
             'id' => 36,
             'connection' => 'database',
-            'queue' => 'default',
+            'queue' => $_ENV['SQS_PREFIX'].'/'.$_ENV['SQS_QUEUE'],
             'payload' => [],
             'exception' => "Illuminate\Queue\ManuallyFailedException in /",
             'failed_at' => '2020-08-26 14:11:21',
@@ -42,6 +42,7 @@ test('hits per page', function () {
         'group' => 'cli',
         'filters' => [
             'startTime' => $this->startTime,
+            'queue' => $_ENV['SQS_QUEUE'],
         ],
         'id' => 36,
         'timestamp' => 1598451081000,
